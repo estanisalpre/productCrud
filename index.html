@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CRUD Productos</title>
+    <meta name="description" content="Crea, busca, edita y elimina los productos para tu tienda.">
+    <link rel="shortcut icon" href="/src/assets/icons/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/src/styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <nav>
+        <div class="searchContainer">
+            <img src="/src/assets/icons/search.png" alt="Ícono de buscar productos">
+            <input type="text" name="searchBar" id="searchBar" placeholder="Buscar producto...">
+        </div>
+        <button id="exportBtn"><img src="/src/assets/icons/pdf.png" alt="Ícono de PDF">Exportar PDF</button>
+    </nav>
+    <main>
+        <form action="" id="productForm">
+            <h2>Agregar un nuevo producto</h2>
+            <input type="text" name="productName" id="productName" required placeholder="Producto">
+            <input type="number" name="price" id="price" required placeholder="Precio">
+            <textarea name="description" id="description" required placeholder="Descripción"></textarea>
+            <input type="text" name="imgUrl" id="imgUrl" required placeholder="Link de la imagen">
+            <input type="submit" id="saveBtn" value="Guardar">
+        </form>
+
+        <section id="editModal">
+            <h2>Edita el producto</h2>
+            <form action="" id="editForm">
+                <input type="text" name="newName" id="newName" required>
+                <input type="number" name="newPrice" id="newPrice" required>
+                <textarea name="newDescription" id="newDescription" required></textarea>
+                <input type="text" name="newImgUrl" id="newImgUrl" required>
+            </form>
+            <div class="formBtns">
+                <button id="updateBtn">Actualizar</button>
+                <button id="cancelBtn">Cancelar</button>
+            </div>
+        </section>
+        <table id="productList"></table>
+    </main>
+    <footer>
+        <ul>
+            <li>Estudiante: Estanislao Salinas Previte</li>
+            <li>Profesor: Jossy Reinaldo</li>
+            <li>Materia: Frontend II </li>
+        </ul>
+    </footer>
+    <script type="module" src="/src/scripts/main.js"></script>
 </body>
 </html>
